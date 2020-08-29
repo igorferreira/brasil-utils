@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%magenta(%d{yyyy-MM-dd HH:mm:ss} [%13.13thread]) %red(${PID:- }) %cyan(%-5level %logger{39}.%M\(%line\)) : %replace(%m){'(secret:)[^\s]*','$1--'}%n%xEx</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILEOUT" class="ch.qos.logback.core.FileAppender">
+        <file>/opt/log-app/brasil-utils.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d [%thread] %-5level  %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="TRACE">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILEOUT" />
+    </root>
+
+</configuration>

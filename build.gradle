@@ -1,0 +1,72 @@
+plugins {
+    id 'java'
+    id 'com.adarshr.test-logger' version '2.1.0'
+}
+
+testlogger {
+    theme 'standard'
+    showExceptions true
+    showStackTraces true
+    showFullStackTraces false
+    showCauses true
+    slowThreshold 2000
+    showSummary true
+    showSimpleNames false
+    showPassed true
+    showSkipped true
+    showFailed true
+    showStandardStreams false
+    showPassedStandardStreams true
+    showSkippedStandardStreams true
+    showFailedStandardStreams true
+    logLevel 'lifecycle'
+}
+
+repositories {
+	mavenCentral()
+}
+
+task printProps {
+    doFirst {
+        println 'sourceCompatibility: ' + sourceCompatibility
+        println 'targetCompatibility: ' + targetCompatibility
+        println 'junitPlatformVersion: ' + junitPlatformVersion
+        println 'junitJupiterVersion: ' + junitJupiterVersion
+    }
+}
+
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.12'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.12'
+
+	implementation 'org.apache.commons:commons-lang3:3.11'
+	implementation 'br.com.caelum.stella:caelum-stella-core:2.1.4'
+	implementation 'org.slf4j:slf4j-api:1.7.16'
+	implementation 'ch.qos.logback:logback-classic:1.2.3'
+	implementation 'ch.qos.logback:logback-core:1.2.3'
+
+    testImplementation 'org.junit.platform:junit-platform-launcher:' + junitPlatformVersion
+    testImplementation 'org.junit.platform:junit-platform-runner:' + junitPlatformVersion
+    testImplementation 'org.junit.platform:junit-platform-suite-api:' + junitPlatformVersion
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:' + junitJupiterVersion
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:' + junitJupiterVersion
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        showStandardStreams = true
+    }
+    maxHeapSize = '1G'
+
+    /* sem plugin com.adarshr.test-logger
+    afterTest { desc, result ->
+        def output = "Class name: ${desc.className}, Test name: ${desc.name},  (Test status: ${result.resultType})"
+        println '\n' + output
+    }
+    */
+}
