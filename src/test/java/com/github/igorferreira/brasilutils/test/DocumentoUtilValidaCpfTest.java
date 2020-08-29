@@ -26,7 +26,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testCPFValidoComPontuacao() {
 
-		final String cpfComPontuacao = "052.503.897-32";
+		final String cpfComPontuacao = "542.821.517-81";
 		log.info("cpfComPontuacao: {} ",cpfComPontuacao);
 
 		assertTrue(DocumentoUtil.validaCpf(cpfComPontuacao));
@@ -36,7 +36,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testCPFValidoSemPontuacao() {
 
-		final String cpfSemPontuacao = "05250389732";
+		final String cpfSemPontuacao = "54282151781";
 		log.info("cpfSemPontuacao: {} ",cpfSemPontuacao);
 
 		assertTrue(DocumentoUtil.validaCpf(cpfSemPontuacao));
@@ -46,7 +46,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testCPFInvalidoSemPontuacao() {
 
-		final String cpfSemPontuacao = "04550389732";
+		final String cpfSemPontuacao = "14282151781";
 		log.info("cpfSemPontuacao: {} ",cpfSemPontuacao);
 
 		assertFalse(DocumentoUtil.validaCpf(cpfSemPontuacao));
@@ -56,7 +56,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testCPFInvalidoComPontuacao() {
 
-		final String cpfComPontuacao = "045.503.897-32";
+		final String cpfComPontuacao = "142.821.517-81";
 		log.info("cpfComPontuacao: {} ",cpfComPontuacao);
 
 		assertFalse(DocumentoUtil.validaCpf(cpfComPontuacao));
@@ -66,7 +66,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testIsCPFComPontuacao() {
 
-		final String cpfComPontuacao = "052.503.897-32";
+		final String cpfComPontuacao = "542.821.517-81";
 		log.info("cpfComPontuacao: {} ",cpfComPontuacao);
 
 		assertTrue(DocumentoUtil.isCpf(cpfComPontuacao));
@@ -76,7 +76,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testIsCPFSemPontuacao() {
 
-		final String cpfSemPontuacao = "05250389732";
+		final String cpfSemPontuacao = "59247582067";
 		log.info("cpfSemPontuacao: {} ",cpfSemPontuacao);
 
 		assertTrue(DocumentoUtil.isCpf(cpfSemPontuacao));
@@ -86,7 +86,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testIsCNPJComPontuacao() {
 
-		final String cnpjComPontuacao = "19.227.488/0001-12";
+		final String cnpjComPontuacao = "50.044.702/0001-45";
 		log.info("cnpjComPontuacao: {} ",cnpjComPontuacao);
 
 		assertTrue(DocumentoUtil.isCnpj(cnpjComPontuacao));
@@ -96,7 +96,7 @@ public class DocumentoUtilValidaCpfTest {
 	@Test
 	public void testIsCNPJSemPontuacao() {
 
-		final String cnpjSemPontuacao = "19227488000112";
+		final String cnpjSemPontuacao = "74801647000159";
 		log.info("cnpjSemPontuacao: {} ",cnpjSemPontuacao);
 
 		assertTrue(DocumentoUtil.isCnpj(cnpjSemPontuacao));

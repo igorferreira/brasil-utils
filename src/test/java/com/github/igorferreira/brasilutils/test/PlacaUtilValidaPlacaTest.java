@@ -24,8 +24,8 @@ public class PlacaUtilValidaPlacaTest {
 	@Order(1)
 	@Test
 	public void testIsNotPlaca() {
-
-		final String placa = "K1K2101";
+		
+		final String placa = "H1N9905";
 		log.info("placa invalida: {} ",placa);
 		
 		assertFalse(PlacaUtil.isPlaca(placa));
@@ -35,7 +35,7 @@ public class PlacaUtilValidaPlacaTest {
 	@Test
 	public void testIsNotPlacaMercosul() {
 
-		final String placa = "KRK2101";
+		final String placa = "MZQ6791";
 		log.info("placa antiga: {} ",placa);
 		
 		assertFalse(PlacaUtil.isPlacaMercosul(placa));
@@ -55,7 +55,7 @@ public class PlacaUtilValidaPlacaTest {
 	@Test
 	public void testIsPlacaComHifen() {
 
-		final String placa = "KRK-2101";
+		final String placa = "HIB-7972";
 		log.info("placa com hifen: {} ",placa);
 		
 		assertTrue(PlacaUtil.isPlaca(placa));
@@ -65,7 +65,7 @@ public class PlacaUtilValidaPlacaTest {
 	@Test
 	public void testIsPlacaSemHifen() {
 
-		final String placa = "KRK2101";
+		final String placa = "HIB7972";
 		log.info("placa sem hifen: {} ",placa);
 
 		assertTrue(PlacaUtil.isPlaca(placa));
