@@ -54,7 +54,7 @@ mvn test
 
 * 0.1.1
   * Adicionado README.MD e alterado placas, cpf e cnpj de exemplo nas classes de teste.
-  * See [commit change](commits) or See [release history](releases)
+  * See [commit change](https://github.com/igorferreira/brasil-utils/commits) or See [release history](https://github.com/igorferreira/brasil-utils/releases)
 * 0.1
   * Primeira versão
 
